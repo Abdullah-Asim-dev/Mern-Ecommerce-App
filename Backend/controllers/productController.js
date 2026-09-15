@@ -16,7 +16,7 @@ export const addProduct = async (req, res) => {
       shopName,
     } = req.body;
 
-    const image = req.file?.filename;
+    const image = req.file?.path;
 
     if (
       !name ||
