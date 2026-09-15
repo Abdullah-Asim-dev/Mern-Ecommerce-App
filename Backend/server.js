@@ -1,3 +1,4 @@
+import "dotenv/config";
 import dns from "dns";
 
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
@@ -5,10 +6,7 @@ dns.setServers(["8.8.8.8", "8.8.4.4"]);
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import dotenv from "dotenv";
 import productRoutes from "./routes/productRoutes.js";
-
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;

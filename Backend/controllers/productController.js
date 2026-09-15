@@ -112,19 +112,28 @@ export const updateProduct = async (req, res) => {
   try {
     const id = req.params.id;
 
-    const updateProductData = await productModel.findByIdAndUpdate(
+    const updateData = {
+      ...req.body,
+    };
+
+    // If a new image is uploaded, save its Cloudinary URL
+    if (req.file) {
+      updateData.image = req.file.path;
+    }
+
+    const updatedProduct = await productModel.findByIdAndUpdate(
       id,
-      req.body,
+      updateData,
       { new: true }
     );
 
-    console.log(updateProductData);
+    console.log(updatedProduct);
 
-    if (updateProductData) {
+    if (updatedProduct) {
       res.send({
         message: "Data Updated",
         success: true,
-        result: updateProductData,
+        result: updatedProduct,
       });
     } else {
       res.send({

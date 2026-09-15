@@ -17,7 +17,7 @@ router.get("/getProducts", getProducts);
 
 router.get("/getProduct/:id", getProduct);
 
-router.put("/update/:id", updateProduct);
+router.put("/update/:id", upload.single("image"), updateProduct);
 
 router.delete("/delete/:id", deleteProduct);
 

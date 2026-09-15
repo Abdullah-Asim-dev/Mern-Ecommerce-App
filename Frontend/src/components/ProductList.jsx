@@ -314,16 +314,11 @@ useEffect(() => {
 
                     {/* Product Image */}
                     <div className="relative h-52 overflow-hidden bg-slate-900">
-
-                      <img
-                      src={
-                      "https://mern-ecommerce-app-1v8u.onrender.com/uploads/" +
-                         product.image
-                         }
-                        alt={product.name}
-                        className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
-                      />
-
+              <img
+                  src={product.image}
+                 alt={product.name}
+              className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                 />
                  <div className="absolute inset-0 bg-slate-950/40" />
 
                       {/* Shop */}

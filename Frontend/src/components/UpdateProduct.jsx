@@ -403,10 +403,7 @@ setOldImage(product.image || "");
                       ) : oldImage ? (
                         <div className="w-full">
                       <img
-                   src={
-                  "https://mern-ecommerce-app-1v8u.onrender.com/uploads/" +
-                      oldImage
-                     }
+                 src={oldImage}
                 alt={name}
                 className="mx-auto h-48 w-full max-w-md rounded-xl object-cover"
                          />
