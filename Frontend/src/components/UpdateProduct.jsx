@@ -31,19 +31,21 @@ function UpdateProduct() {
       setFetching(true);
 
       const response = await fetch(
-        "http://localhost:3000/getProduct/" + id
+        "https://mern-ecommerce-app-1v8u.onrender.com/getProduct/" + id
       );
 
-      const data = await response.json();
+     const data = await response.json();
 
-      setName(data.name || "");
-      setPrice(data.price || "");
-      setCurrencyCode(data.currencyCode || "");
-      setNumberOfSales(data.numberOfSales || "");
-      setRating(data.rating || "");
-      setFreeShipping(data.freeShipping || "Yes");
-      setShopName(data.shopName || "");
-      setOldImage(data.image || "");
+const product = data.result;
+
+setName(product.name || "");
+setPrice(product.price || "");
+setCurrencyCode(product.currencyCode || "");
+setNumberOfSales(product.numberOfSales || "");
+setRating(product.rating || "");
+setFreeShipping(product.freeShipping || "Yes");
+setShopName(product.shopName || "");
+setOldImage(product.image || "");
     } catch (error) {
       console.log("Error fetching product:", error);
 
@@ -95,7 +97,7 @@ function UpdateProduct() {
       }
 
       const response = await fetch(
-        "http://localhost:3000/update/" + id,
+        "https://mern-ecommerce-app-1v8u.onrender.com/update/" + id,
         {
           method: "PUT",
           body: formData,
@@ -400,15 +402,14 @@ function UpdateProduct() {
                         </div>
                       ) : oldImage ? (
                         <div className="w-full">
-                          <img
-                            src={
-                              "http://localhost:3000/uploads/" +
-                              oldImage
-                            }
-                            alt={name}
-                            className="mx-auto h-48 w-full max-w-md rounded-xl object-cover"
-                          />
-
+                      <img
+                   src={
+                  "https://mern-ecommerce-app-1v8u.onrender.com/uploads/" +
+                      oldImage
+                     }
+                alt={name}
+                className="mx-auto h-48 w-full max-w-md rounded-xl object-cover"
+                         />
                           <p className="mt-4 text-xs text-slate-500">
                             Current product image
                           </p>

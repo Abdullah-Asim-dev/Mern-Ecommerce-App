@@ -13,7 +13,9 @@ function ProductList() {
   try {
     setLoading(true);
 
-    const response = await fetch("http://localhost:3000/getProducts");
+  const response = await fetch(
+  "https://mern-ecommerce-app-1v8u.onrender.com/getProducts"
+);
     const data = await response.json();
 
     setProducts(data.result);
@@ -48,7 +50,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/delete/" + id,
+        "https://mern-ecommerce-app-1v8u.onrender.com/delete/" + id,
         {
           method: "DELETE",
         }
@@ -314,10 +316,10 @@ useEffect(() => {
                     <div className="relative h-52 overflow-hidden bg-slate-900">
 
                       <img
-                        src={
-                          "http://localhost:3000/uploads/" +
-                          product.image
-                        }
+                      src={
+                      "https://mern-ecommerce-app-1v8u.onrender.com/uploads/" +
+                         product.image
+                         }
                         alt={product.name}
                         className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                       />

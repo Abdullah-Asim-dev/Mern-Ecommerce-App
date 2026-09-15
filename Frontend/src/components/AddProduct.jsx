@@ -54,15 +54,13 @@ function AddProduct() {
       formData.append("freeShipping", freeShipping);
       formData.append("shopName", shopName);
       formData.append("image", image);
-
       const response = await fetch(
-        "http://localhost:3000/addProduct",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
+       "https://mern-ecommerce-app-1v8u.onrender.com/addProduct",
+      {
+           method: "POST",
+           body: formData,
+       }
+          );
       if (response.ok) {
         await Swal.fire({
           title: "Product Added",
