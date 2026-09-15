@@ -20,7 +20,10 @@ app.use("/uploads", express.static("uploads"));
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://mern-ecommerce-app-alpha-henna.vercel.app",
+    ],
   })
 );
 
