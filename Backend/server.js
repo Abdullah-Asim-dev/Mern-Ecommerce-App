@@ -22,6 +22,7 @@ app.use(
       "http://localhost:5173",
       "https://mern-ecommerce-app-alpha-henna.vercel.app",
       "https://mern-ecommerce-77cvdmzwg-abdullahasimoffical4737-6115s-projects.vercel.app",
+      "https://mern-ecommerce-gouhxfw4b-abdullahasimoffical4737-6115s-projects.vercel.app",
     ],
   })
 );
